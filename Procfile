@@ -1,1 +1,1 @@
-web: java -jar target/mpintegration.jar
+web: java -jar mpintegration.jar

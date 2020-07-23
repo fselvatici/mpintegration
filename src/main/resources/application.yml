@@ -9,7 +9,10 @@ logging:
 
 management:
   server:
-    port:8080
+    port: 8443
+
+server:
+  port: 8443
 
 zk:
   springboot-packaging: war

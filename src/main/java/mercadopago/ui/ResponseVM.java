@@ -30,4 +30,16 @@ public class ResponseVM {
         processingMode = (String) current.getAttribute("processing_mode");
         merchantAccountId = (String) current.getAttribute("merchant_account_id");
     }
+
+    public String getColor() {
+        if (DetailVM.APPROVED.equals(paymentStatus)) {
+            return "green";
+        } else if (DetailVM.IN_PROCESS.equals(paymentStatus) || DetailVM.PENDING.equals(paymentStatus)) {
+            return "yellow";
+        } else if (DetailVM.RECHAZADO.equals(paymentStatus)) {
+            return "red";
+        } else {
+            return "white";
+        }
+    }
 }

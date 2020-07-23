@@ -9,11 +9,15 @@ logging:
 
 management:
   server:
-    port: 8080
+    port: 8443
 
 server:
-  port: 8080
-
+  port: 443
+  ssl:
+    key-store: keystore.p12
+    key-store-password: mpintegration
+    keyStoreType: PKCS12
+    keyAlias: tomcat
 zk:
   springboot-packaging: war
   homepage:

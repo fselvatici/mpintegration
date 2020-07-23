@@ -7,7 +7,7 @@
         <rows>
             <row>
                 <label value="paymentStatus"/>
-                <label value="${vm.paymentStatus}"/>
+                <label value="${vm.paymentStatus}" style="background-color:${vm.color}"/>
             </row>
             <row>
                 <label value="collectionId"/>

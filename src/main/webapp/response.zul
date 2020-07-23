@@ -1,0 +1,46 @@
+<zk>
+    <grid height="400px">
+        <columns>
+            <column label="Field"/>
+            <column label="Value"/>
+        </columns>
+        <rows>
+            <row>
+                <label value="paymentStatus"/>
+                <label value="${vm.paymentStatus}"/>
+            </row>
+            <row>
+                <label value="collectionId"/>
+                <label value="${vm.collectionId}"/>
+            </row>
+            <row>
+                <label value="collectionStatus"/>
+                <label value="${vm.collectionStatus}"/>
+            </row>
+            <row>
+                <label value="externalRef"/>
+                <label value="${vm.externalRef}"/>
+            </row>
+            <row>
+                <label value="paymentType"/>
+                <label value="${vm.paymentType}"/>
+            </row>
+            <row>
+                <label value="preferenceId"/>
+                <label value="${vm.preferenceId}"/>
+            </row>
+            <row>
+                <label value="siteId"/>
+                <label value="${vm.siteId}"/>
+            </row>
+            <row>
+                <label value="processingMode"/>
+                <label value="${vm.processingMode}"/>
+            </row>
+            <row>
+                <label value="merchantAccountId"/>
+                <label value="${vm.merchantAccountId}"/>
+            </row>
+        </rows>
+    </grid>
+</zk>

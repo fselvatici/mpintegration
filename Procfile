@@ -1,1 +1,1 @@
-web: java -jar mpintegration.war
+web: java $JAVA_OPTS -Dserver.port=$PORT -jar target/mpintegration.war

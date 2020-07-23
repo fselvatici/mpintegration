@@ -6,4 +6,6 @@ Implementation-Title:
 Implementation-URL: http://your-website/
 Implementation-Version: 1.0
 Implementation-Vendor: 
-Main-Class: mercadopago.Application
+Start-Class: mercadopago.Application
+Main-Class: org.springframework.boot.loader.WarLauncher
+

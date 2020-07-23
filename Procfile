@@ -1,1 +1,1 @@
-web: java -jar mpintegration.jar
+web: java -jar mpintegration.war

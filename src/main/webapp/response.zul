@@ -15,7 +15,7 @@
             </row>
             <row>
                 <label value="collectionStatus"/>
-                <label value="${vm.collectionStatus}"/>
+                <label value="${vm.collectionStatus}" style="background-color:${vm.color}"/>
             </row>
             <row>
                 <label value="externalRef"/>

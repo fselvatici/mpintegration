@@ -1,8 +1,0 @@
-<zk>
-	<window apply="org.zkoss.bind.BindComposer"
-		viewModel="@id('vm')@init('mercadopago.MyViewModel')"
-		validationMessages="@id('vmsgs')">
-		<hlayout>today is <label value="@load(vm.answer)" /></hlayout>
-		<button label="ask" onClick="@command('cmd')"/>
-	</window>
-</zk>

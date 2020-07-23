@@ -2,8 +2,9 @@ package mercadopago.ui;
 
 import lombok.Getter;
 import org.zkoss.bind.annotation.Init;
-import org.zkoss.zk.ui.Session;
-import org.zkoss.zk.ui.Sessions;
+import org.zkoss.zk.ui.Executions;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Getter
 public class ResponseVM {
@@ -19,24 +20,24 @@ public class ResponseVM {
 
     @Init
     public void init() {
-        final Session current = Sessions.getCurrent();
-        paymentStatus = (String) current.getAttribute("payment_status");
-        collectionId = (String) current.getAttribute("collection_id");
-        collectionStatus = (String) current.getAttribute("collection_status");
-        externalRef = (String) current.getAttribute("external_ref");
-        paymentType = (String) current.getAttribute("payment_type");
-        preferenceId = (String) current.getAttribute("preference_id");
-        siteId = (String) current.getAttribute("site_id");
-        processingMode = (String) current.getAttribute("processing_mode");
-        merchantAccountId = (String) current.getAttribute("merchant_account_id");
+        final HttpServletRequest request = (HttpServletRequest) Executions.getCurrent().getNativeRequest();
+        paymentStatus = request.getParameter("payment_status");
+        collectionId = request.getParameter("collection_id");
+        collectionStatus = request.getParameter("collection_status");
+        externalRef = request.getParameter("external_reference");
+        paymentType = request.getParameter("payment_type");
+        preferenceId = request.getParameter("preference_id");
+        siteId = request.getParameter("site_id");
+        processingMode = request.getParameter("processing_mode");
+        merchantAccountId = request.getParameter("merchant_account_id");
     }
 
     public String getColor() {
-        if (DetailVM.APPROVED.equals(paymentStatus)) {
+        if (DetailVM.APPROVED.equals(collectionStatus)) {
             return "green";
-        } else if (DetailVM.IN_PROCESS.equals(paymentStatus) || DetailVM.PENDING.equals(paymentStatus)) {
+        } else if (DetailVM.IN_PROCESS.equals(collectionStatus) || DetailVM.PENDING.equals(collectionStatus)) {
             return "yellow";
-        } else if (DetailVM.RECHAZADO.equals(paymentStatus)) {
+        } else if (DetailVM.RECHAZADO.equals(collectionStatus)) {
             return "red";
         } else {
             return "white";

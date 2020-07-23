@@ -214,10 +214,9 @@
                                         </h3>
                                     </div>
                                     <x:form action="detail.zhtml" method="POST">
-                                        <script
-                                                src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
-                                                data-preference-id="${preference.id}">
-                                        </script>
+                                        <div class="mercadopago-button z-button" >
+                                            <a style="color:white" href="${preference.initPoint}">Pagar la compra</a>
+                                        </div>
                                     </x:form>
                                 </div>
                             </div>

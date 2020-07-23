@@ -4,8 +4,6 @@ logging:
     console: '%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n'
   level:
     project.user.UserClient: DEBUG
-  profiles:
-    active: production
 
 management:
   server:
@@ -20,11 +18,11 @@ server:
     keyAlias: tomcat
 zk:
   springboot-packaging: war
-  homepage:
+  homepage: index.zul
 
 mp:
   integratorId: dev_24c65fb163bf11ea96500242ac130004
-  webhook: https://eutopiaespacio.com.ar/mphook
+  webhook: https://eutopiaespacio.com.ar:5000/mphook
   testSeller:
     collectorId: 469485398
     publicKey: APP_USR-7eb0138a-189f-4bec-87d1-c0504ead5626

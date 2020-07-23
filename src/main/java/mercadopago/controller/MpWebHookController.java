@@ -1,26 +1,30 @@
 package mercadopago.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import mercadopago.model.Event;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-import static org.springframework.http.HttpStatus.OK;
-
-@Controller
+@RestController
+@RequestMapping("/mphook")
 @Slf4j
-@RequestMapping(name = "/mphook")
 public class MpWebHookController {
-    @SneakyThrows
     @PostMapping
-    public ResponseEntity<Void> notification(@RequestBody Event event) {
-        logReceivedEvent(new ObjectMapper().writeValueAsString(event));
-        return new ResponseEntity<>(OK);
+    public String notification(@RequestBody Event event) {
+        String json = null;
+        try {
+            json = new ObjectMapper().writeValueAsString(event);
+            logReceivedEvent(json);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return json;
+    }
+
+    @GetMapping
+    public String hello() {
+        return "hello";
     }
 
     protected void logReceivedEvent(String json) {

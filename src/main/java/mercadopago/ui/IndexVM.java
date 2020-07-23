@@ -4,6 +4,7 @@ import com.mercadopago.MercadoPago;
 import com.mercadopago.exceptions.MPException;
 import com.mercadopago.resources.Preference;
 import com.mercadopago.resources.datastructures.preference.*;
+import lombok.extern.slf4j.Slf4j;
 import mercadopago.config.Credentials;
 import org.zkoss.bind.annotation.BindingParam;
 import org.zkoss.bind.annotation.Command;
@@ -16,6 +17,7 @@ import org.zkoss.zk.ui.select.annotation.WireVariable;
 import static java.lang.String.format;
 import static mercadopago.Constants.*;
 
+@Slf4j
 public class IndexVM {
     public static final String AMEX = "amex";
     public static final String REDLINK = "redlink";
@@ -49,9 +51,12 @@ public class IndexVM {
         preference.setNotificationUrl(credentials.getWebhook());
         preference.appendItem(createItem(title, unit, price, img));
         preference.setPayer(createPayer());
+        preference.setAutoReturn(Preference.AutoReturn.approved);
         preference.setBackUrls(new BackUrls(getPath(SUCCESS_ZUL), getPath(PENDING_ZUL), getPath(FAILURE_ZUL)));
         preference.setPaymentMethods(createPaymentMethods());
         preference.save();
+        log.info("PreferenceId:{}, NotificationUrl:{}, ExternalPreference:{}",
+                preference.getId(), preference.getNotificationUrl(), preference.getExternalReference());
         return preference;
     }
 

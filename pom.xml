@@ -14,7 +14,7 @@
         <maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
         <packname>-${project.version}-FL-${maven.build.timestamp}</packname>
     </properties>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <name>The mpintegration Project</name>
     <description>The mpintegration Project</description>
     <licenses>

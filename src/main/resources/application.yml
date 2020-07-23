@@ -5,14 +5,14 @@ logging:
   level:
     project.user.UserClient: DEBUG
   profiles:
-    active: dev
+    active: production
 
 management:
   server:
     port: 8443
 
 server:
-  port: 443
+  port: ${PORT:5000}
   ssl:
     key-store: keystore.p12
     key-store-password: mpintegration

@@ -20,7 +20,7 @@ import static mercadopago.Constants.*;
 @Slf4j
 public class IndexVM {
     public static final String AMEX = "amex";
-    public static final String REDLINK = "redlink";
+    public static final String ATM = "atm";
     public static final int INSTALLMENTS = 6;
     public static final String EXTERNAL_REFERENCE = "fselvatici@gmail.com";
 
@@ -77,12 +77,12 @@ public class IndexVM {
                         .setNumber(credentials.getUserTelephone()))
                 .setAddress(new Address().setStreetName(credentials.getStreetName())
                         .setStreetNumber(credentials.getStreetNumber())
-                        .setZipCode(credentials.getUserAreaCode()));
+                        .setZipCode(credentials.getPostalCode()));
     }
 
     private PaymentMethods createPaymentMethods() {
         return new PaymentMethods().setExcludedPaymentMethods(AMEX)
-                .setExcludedPaymentTypes(REDLINK)
+                .setExcludedPaymentTypes(ATM)
                 .setInstallments(INSTALLMENTS);
     }
 

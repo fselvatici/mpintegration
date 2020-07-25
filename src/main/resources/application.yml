@@ -16,9 +16,13 @@ server:
     key-store-password: mpintegration
     keyStoreType: PKCS12
     keyAlias: tomcat
+
+security:
+  require-ssl: true
+
 zk:
   springboot-packaging: war
-  homepage: index.zul
+  homepage: index
 
 mp:
   integratorId: dev_24c65fb163bf11ea96500242ac130004
@@ -35,6 +39,6 @@ mp:
     surname: Landa
     areaCode: 11
     telephone: 22223333
-    streetName: False
+    streetName: "False"
     streetNumber: 123
     postalCode: 1111

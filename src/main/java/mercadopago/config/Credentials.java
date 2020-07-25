@@ -38,5 +38,5 @@ public class Credentials {
     @Value("${mp.buyer.streetNumber}")
     private Integer streetNumber;
     @Value("${mp.buyer.postalCode}")
-    private Integer postalCode;
+    private String postalCode;
 }

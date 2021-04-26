@@ -10,7 +10,7 @@
         <zkspringboot.version>1.0.3</zkspringboot.version>
         <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
         <ckez.version>4.14.0.0</ckez.version>
-        <commons-io>2.6</commons-io>
+        <commons-io>2.7</commons-io>
         <maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
         <packname>-${project.version}-FL-${maven.build.timestamp}</packname>
     </properties>
